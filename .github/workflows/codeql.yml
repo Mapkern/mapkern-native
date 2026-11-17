@@ -38,7 +38,7 @@ jobs:
             os: ubuntu-24.04
           - language: swift
             build-mode: manual
-            os: macos-15
+            os: macos-26
           - language: actions
             build-mode: none
             os: ubuntu-24.04
