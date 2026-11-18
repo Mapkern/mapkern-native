@@ -4,7 +4,7 @@ project(hello LANGUAGES C CXX)
 include(FetchContent)
 FetchContent_Declare(
   mapkern
-  URL https://github.com/grangedevgroup-code/mapkern-native/archive/refs/tags/v0.1.0.tar.gz
+  URL https://github.com/Mapkern/mapkern-native/archive/refs/tags/v0.1.0.tar.gz
   DOWNLOAD_EXTRACT_TIMESTAMP TRUE
 )
 FetchContent_MakeAvailable(mapkern)

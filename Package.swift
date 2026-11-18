@@ -10,7 +10,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "CMapkern",
-            url: "https://github.com/grangedevgroup-code/mapkern-native/releases/download/v0.1.0/Mapkern.xcframework.zip",
+            url: "https://github.com/Mapkern/mapkern-native/releases/download/v0.1.0/Mapkern.xcframework.zip",
             checksum: "cdd52b17cb8874cf3a191fbdb6a66f35d9625a1553b72df47e9e509a1dd3db20"
         ),
         .target(

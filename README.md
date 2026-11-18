@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-Mapkern Native is the C++ version of [Mapkern GL JS](https://github.com/grangedevgroup-code/mapkern-gl-js). It draws the same maps, as a flat map, in 3D over real terrain or as a globe, inside native apps on Android and Fire tablets, iOS, macOS, Windows and Linux. There's no API key and no tile server to set up: a new map shows the whole world from the free [OpenFreeMap](https://openfreemap.org/) Liberty style.
+Mapkern Native is the C++ version of [Mapkern GL JS](https://github.com/Mapkern/mapkern-gl-js). It draws the same maps, as a flat map, in 3D over real terrain or as a globe, inside native apps on Android and Fire tablets, iOS, macOS, Windows and Linux. There's no API key and no tile server to set up: a new map shows the whole world from the free [OpenFreeMap](https://openfreemap.org/) Liberty style.
 
 <p>
   <img src="assets/screenshot-terrain.webp" alt="Mount Rainier in 3D, tilted 60 degrees" width="49%">
@@ -14,11 +14,11 @@ Mapkern Native is the C++ version of [Mapkern GL JS](https://github.com/grangede
 
 <sub>Map data © OpenStreetMap contributors, OpenFreeMap, OpenMapTiles and Mapterhorn</sub>
 
-To see it before writing any code, download the package for your computer from the [latest release](https://github.com/grangedevgroup-code/mapkern-native/releases/latest) and run `bin/mapkern-viewer`, or install `mapkern-demo.apk` on an Android device. The viewer isn't signed, so Windows and macOS will ask you to confirm the first time.
+To see it before writing any code, download the package for your computer from the [latest release](https://github.com/Mapkern/mapkern-native/releases/latest) and run `bin/mapkern-viewer`, or install `mapkern-demo.apk` on an Android device. The viewer isn't signed, so Windows and macOS will ask you to confirm the first time.
 
 ## Android
 
-Download [`mapkern.aar`](https://github.com/grangedevgroup-code/mapkern-native/releases/latest/download/mapkern.aar) into your app's `libs` folder and add it to `build.gradle.kts`:
+Download [`mapkern.aar`](https://github.com/Mapkern/mapkern-native/releases/latest/download/mapkern.aar) into your app's `libs` folder and add it to `build.gradle.kts`:
 
 ```kotlin
 dependencies {
@@ -46,7 +46,7 @@ AndroidView(factory = { MapView(it, options = MapOptions(longitude = -122.33, la
 
 ## iOS and macOS
 
-In Xcode, choose File > Add Package Dependencies and paste `https://github.com/grangedevgroup-code/mapkern-native`. SwiftUI apps use `MapkernMap`:
+In Xcode, choose File > Add Package Dependencies and paste `https://github.com/Mapkern/mapkern-native`. SwiftUI apps use `MapkernMap`:
 
 ```swift
 import Mapkern
@@ -68,7 +68,7 @@ let map = MapView(frame: bounds, options: MapOptions(longitude: -122.33, latitud
 
 ## Windows
 
-Download the two `.nupkg` files from the [latest release](https://github.com/grangedevgroup-code/mapkern-native/releases/latest) into a `packages` folder and add the package from there. It needs .NET 10 and carries the native library with it. On a build server, list that folder in a `nuget.config` too:
+Download the two `.nupkg` files from the [latest release](https://github.com/Mapkern/mapkern-native/releases/latest) into a `packages` folder and add the package from there. It needs .NET 10 and carries the native library with it. On a build server, list that folder in a `nuget.config` too:
 
 ```sh
 dotnet add package Mapkern.Native.WinForms --source ./packages
@@ -91,7 +91,7 @@ cmake_minimum_required(VERSION 3.24)
 project(hello LANGUAGES C CXX)
 
 include(FetchContent)
-FetchContent_Declare(mapkern URL https://github.com/grangedevgroup-code/mapkern-native/archive/refs/tags/v0.1.0.tar.gz)
+FetchContent_Declare(mapkern URL https://github.com/Mapkern/mapkern-native/archive/refs/tags/v0.1.0.tar.gz)
 FetchContent_MakeAvailable(mapkern)
 
 add_executable(hello main.cpp)
@@ -115,7 +115,7 @@ int main() {
 
 ## Your own data
 
-Every SDK has the same calls. Sources and layers are JSON, in the same format as [Mapkern GL JS styles](https://github.com/grangedevgroup-code/mapkern-gl-js/blob/main/docs/style.md), and you can add them right after creating the map, before the style has loaded. This is Kotlin; Swift, C# and C++ read the same way, with the first letter of each C# method in capitals:
+Every SDK has the same calls. Sources and layers are JSON, in the same format as [Mapkern GL JS styles](https://github.com/Mapkern/mapkern-gl-js/blob/main/docs/style.md), and you can add them right after creating the map, before the style has loaded. This is Kotlin; Swift, C# and C++ read the same way, with the first letter of each C# method in capitals:
 
 ```kotlin
 map.addSource("places", """{ "type": "geojson", "data": {
