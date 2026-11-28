@@ -60,7 +60,7 @@ jobs:
       - name: Build XCFramework
         if: matrix.language == 'swift'
         run: brew install ninja && sh platform/apple/build-xcframework.sh
-      - uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+      - uses: github/codeql-action/init@1bd86f2fdb4b86187fa4059f16f31a3202acc9ea # v4.39.4
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
@@ -82,7 +82,7 @@ jobs:
         if: matrix.language == 'swift'
         working-directory: platform/apple
         run: swift build
-      - uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+      - uses: github/codeql-action/analyze@1bd86f2fdb4b86187fa4059f16f31a3202acc9ea # v4.39.4
         with:
           category: /language:${{ matrix.language }}
           upload: failure-only
@@ -101,7 +101,7 @@ jobs:
             -test/**:cpp/unused-static-function
           input: sarif/results.sarif
           output: sarif/results.sarif
-      - uses: github/codeql-action/upload-sarif@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+      - uses: github/codeql-action/upload-sarif@1bd86f2fdb4b86187fa4059f16f31a3202acc9ea # v4.39.4
         with:
           sarif_file: sarif/results.sarif
           category: /language:${{ matrix.language }}
